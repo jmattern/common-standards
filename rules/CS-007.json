@@ -1,0 +1,7 @@
+{
+  "id": "CS-007",
+  "severity": "error",
+  "title": "Make dependency resolution reproducible",
+  "definition": "Third-party dependencies are version-pinned or locked, and the checked-in declarations allow another developer to resolve the same dependency set. A project with no third-party dependencies states that explicitly.",
+  "verification": "Inspect dependency declarations and lockfiles; Python requirements entries must use exact versions."
+}

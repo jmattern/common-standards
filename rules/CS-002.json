@@ -1,0 +1,7 @@
+{
+  "id": "CS-002",
+  "severity": "error",
+  "title": "Run applicable linters",
+  "definition": "For every language or file type present, the repository configures and runs the corresponding baseline linter in rules/profiles.json. Required tool or config failures are failures, never a pass.",
+  "verification": "Run each applicable profile command and verify each required configuration file exists."
+}

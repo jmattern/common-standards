@@ -1,0 +1,7 @@
+{
+  "id": "CS-006",
+  "severity": "error",
+  "title": "Declare runtime and toolchains",
+  "definition": "The supported runtime and toolchain versions are written down in TOOLCHAINS.md or equivalent machine-readable project metadata. Tool versions needed to reproduce CI are pinned.",
+  "verification": "Check that the toolchain declaration exists and documents supported versions."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "CS-012",
+  "severity": "error",
+  "title": "Record temporary exceptions explicitly",
+  "definition": "Any temporary deviation identifies the standard ID, affected path scope, responsible owner, reason, and expiration date. Invalid or expired exceptions fail.",
+  "verification": "Validate exceptions in standards.json against schemas and the current UTC date."
+}

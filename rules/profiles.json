@@ -1,0 +1,18 @@
+{
+  "profiles": [
+    {"id":"javascript-typescript","globs":["*.js","*.mjs","*.cjs","*.jsx","*.ts","*.tsx"],"exclude_globs":["linters/**","tests/fixtures/**"],"configs":["linters/eslint.config.mjs"],"commands":[{"id":"eslint","argv":["npx","--prefix","linters","--no-install","eslint","--config","linters/eslint.config.mjs","{files}"]}]},
+    {"id":"python","globs":["*.py"],"configs":["linters/ruff.toml"],"commands":[{"id":"ruff","argv":["ruff","check","--config","linters/ruff.toml","{files}"]}]},
+    {"id":"go","globs":["*.go"],"configs":["linters/.golangci.yml"],"commands":[{"id":"golangci-lint","argv":["golangci-lint","--config","linters/.golangci.yml","run"]}]},
+    {"id":"rust","globs":["*.rs"],"configs":["Cargo.toml","linters/rustfmt.toml"],"commands":[{"id":"clippy","argv":["cargo","clippy","--all-targets","--all-features","--","-D","warnings"]},{"id":"rustfmt","argv":["rustfmt","--config-path","linters/rustfmt.toml","--check","{files}"]}]},
+    {"id":"java","globs":["*.java"],"configs":["linters/checkstyle.xml"],"commands":[{"id":"checkstyle","argv":["checkstyle","-c","linters/checkstyle.xml","{files}"]}]},
+    {"id":"shell","globs":["*.sh","*.bash"],"configs":["linters/.shellcheckrc"],"commands":[{"id":"shellcheck","argv":["shellcheck","--rcfile=linters/.shellcheckrc","{files}"]}]},
+    {"id":"markdown","globs":["*.md"],"configs":["linters/.markdownlint-cli2.yaml"],"commands":[{"id":"markdownlint-cli2","argv":["npx","--prefix","linters","--no-install","markdownlint-cli2","--config","linters/.markdownlint-cli2.yaml","{files}"]}]},
+    {"id":"yaml","globs":["*.yml","*.yaml"],"configs":["linters/.yamllint"],"commands":[{"id":"yamllint","argv":["yamllint","-c","linters/.yamllint","{files}"]}]},
+    {"id":"c-cpp","globs":["*.c","*.h","*.cc","*.hh","*.cpp","*.hpp","*.cxx","*.hxx"],"configs":["linters/.clang-tidy","linters/.clang-format"],"compilation_database":true,"commands":[{"id":"clang-tidy","argv":["clang-tidy","--config-file=linters/.clang-tidy","-p","build","{files}"]},{"id":"clang-format","argv":["clang-format","--style=file:linters/.clang-format","--dry-run","--Werror","{files}"]}]},
+    {"id":"csharp","globs":["*.cs"],"configs":[".editorconfig"],"commands":[{"id":"dotnet-format","argv":["dotnet","format","--verify-no-changes"]}]},
+    {"id":"swift","globs":["*.swift"],"configs":["linters/.swiftlint.yml"],"commands":[{"id":"swiftlint","argv":["swiftlint","lint","--config","linters/.swiftlint.yml","--strict"]}]},
+    {"id":"kotlin","globs":["*.kt","*.kts"],"configs":[".editorconfig"],"commands":[{"id":"ktlint","argv":["ktlint","{files}"]}]},
+    {"id":"ruby","globs":["*.rb"],"configs":["linters/.rubocop.yml"],"commands":[{"id":"rubocop","argv":["rubocop","--config","linters/.rubocop.yml","{files}"]}]},
+    {"id":"php","globs":["*.php"],"configs":["linters/phpcs.xml"],"commands":[{"id":"phpcs","argv":["phpcs","--standard=linters/phpcs.xml","{files}"]}]}
+  ]
+}

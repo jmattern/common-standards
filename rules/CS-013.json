@@ -1,0 +1,7 @@
+{
+  "id": "CS-013",
+  "severity": "warning",
+  "title": "Provide agent instructions",
+  "definition": "Repositories include a top-level AGENTS.md with project-specific guidance for coding agents.",
+  "verification": "Check for a nonempty top-level AGENTS.md."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "CS-008",
+  "severity": "error",
+  "title": "Keep secrets out of source",
+  "definition": "Source files and committed configuration contain no credentials, private keys, or live access tokens. Use secret storage or environment injection.",
+  "verification": "Run the repository's configured secret scanner or the checker's built-in high-confidence patterns."
+}

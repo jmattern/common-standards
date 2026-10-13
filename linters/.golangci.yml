@@ -1,0 +1,15 @@
+version: "2"
+run:
+  timeout: 5m
+linters:
+  default: standard
+  enable:
+    - gosec
+    - revive
+  settings:
+    govet:
+      enable-all: true
+formatters:
+  enable:
+    - gofmt
+    - goimports

@@ -1,0 +1,7 @@
+{
+  "id": "CS-011",
+  "severity": "warning",
+  "title": "Declare licensing terms",
+  "definition": "The repository contains a license or an explicit statement that its terms are proprietary or otherwise not granted. Do not infer or fabricate licensing authority.",
+  "verification": "Check for LICENSE, COPYING, or a clear rights statement."
+}

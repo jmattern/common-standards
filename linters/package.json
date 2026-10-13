@@ -1,0 +1,14 @@
+{
+  "name": "common-standards-eslint-baseline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint-typescript-smoke": "eslint --config eslint.config.mjs fixtures/typescript-parser-smoke.ts"
+  },
+  "devDependencies": {
+    "eslint": "10.10.0",
+    "markdownlint-cli2": "0.17.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.1"
+  }
+}

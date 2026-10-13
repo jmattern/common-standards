@@ -1,0 +1,7 @@
+{
+  "id": "CS-009",
+  "severity": "warning",
+  "title": "Document setup and common commands",
+  "definition": "README.md explains setup, build, test, and lint commands so a new contributor can work with the repository.",
+  "verification": "Review README.md for setup, build, test, and lint sections or equivalent instructions."
+}

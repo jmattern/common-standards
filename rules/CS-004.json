@@ -1,0 +1,7 @@
+{
+  "id": "CS-004",
+  "severity": "error",
+  "title": "Build the project",
+  "definition": "When the repository contains source code, it declares and successfully runs a build or compile command.",
+  "verification": "Execute the configured build command when source files are present."
+}

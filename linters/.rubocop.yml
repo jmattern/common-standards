@@ -1,0 +1,10 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2
+  Exclude:
+    - vendor/**/*
+    - tmp/**/*
+Layout/LineLength:
+  Max: 100
+Metrics/MethodLength:
+  Max: 20

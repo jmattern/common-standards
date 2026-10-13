@@ -1,0 +1,7 @@
+{
+  "id": "CS-001",
+  "severity": "error",
+  "title": "Declare dependencies",
+  "definition": "Every repository has a nonempty top-level DEPENDENCIES.md or a pip-compatible top-level requirements.txt. DEPENDENCIES.md or a requirements comment may explicitly state that the project has no third-party dependencies.",
+  "verification": "Check the top-level declaration content; a heading-only Markdown file or empty requirements file does not pass."
+}

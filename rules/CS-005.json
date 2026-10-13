@@ -1,0 +1,7 @@
+{
+  "id": "CS-005",
+  "severity": "error",
+  "title": "Check formatting",
+  "definition": "The repository declares format-check commands for applicable source files and all formatting checks pass.",
+  "verification": "Execute configured formatting commands in check mode."
+}

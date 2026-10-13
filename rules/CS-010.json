@@ -1,0 +1,7 @@
+{
+  "id": "CS-010",
+  "severity": "warning",
+  "title": "Declare code ownership",
+  "definition": "The repository identifies maintainers or code owners, typically in .github/CODEOWNERS.",
+  "verification": "Check for a nonempty ownership declaration. Do not invent an owner when none is known."
+}

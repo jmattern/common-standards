@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "checks": {
+    "CS-003": [{"id":"unittest","argv":["python3","-m","unittest","discover","-s","tests","-v"],"when":["tests/*.py"]}],
+    "CS-004": [{"id":"compile","argv":["python3","-c","import ast,pathlib; [ast.parse(p.read_text()) for p in pathlib.Path('tools').glob('*.py')]"]}],
+    "CS-005": [{"id":"ruff-format","argv":["ruff","format","--check","tools","tests"]}]
+  },
+  "exceptions": []
+}

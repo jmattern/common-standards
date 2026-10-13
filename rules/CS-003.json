@@ -1,0 +1,7 @@
+{
+  "id": "CS-003",
+  "severity": "error",
+  "title": "Test changes",
+  "definition": "The repository declares a repeatable test command and the command succeeds.",
+  "verification": "Execute the configured test command."
+}

@@ -1,0 +1,59 @@
+name: standards
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: python -m pip install -r requirements.txt
+      - run: npm ci --prefix linters
+      - run: >-
+          python tools/standards.py --lint-only --lint-output lint-results.json
+          --github-summary "$GITHUB_STEP_SUMMARY"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-results
+          path: lint-results.json
+          if-no-files-found: ignore
+
+  standards:
+    if: always()
+    needs: [lint]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm ci --prefix linters
+      - run: python -m pip install -r requirements.txt
+      - if: always()
+        uses: actions/download-artifact@v4
+        with:
+          name: lint-results
+          path: artifacts
+        continue-on-error: true
+      - run: >-
+          python tools/standards.py --lint-report artifacts/lint-results.json
+          --json-out artifacts/standards-report.json --github-summary
+          "$GITHUB_STEP_SUMMARY"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: standards-report
+          path: artifacts/standards-report.json
+          if-no-files-found: ignore
